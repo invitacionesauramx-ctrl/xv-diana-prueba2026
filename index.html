@@ -512,32 +512,57 @@ function loop1(){
 }
 loop1();
 
-/* PARTICULAS BLOQUE 3 */
-const cXV=document.getElementById("particulasXV");
-const xXV=cXV.getContext("2d");
-function rsXV(){cXV.width=cXV.offsetWidth;cXV.height=cXV.offsetHeight}
-rsXV();addEventListener("resize",rsXV);
+// BLOQUE 3 – PARTÍCULAS DORADAS
+const cXV = document.getElementById("particulasXV");
+const xXV = cXV.getContext("2d");
 
-let pXV=[];
-for(let i=0;i<30;i++)pXV.push({x:cXV.width/2,y:cXV.height/2,dx:(Math.random()-.5)*1.4,dy:(Math.random()-.5)*1.4,r:Math.random()*2+1,a:Math.random()});
-function loopXV(){
-  xXV.clearRect(0,0,cXV.width,cXV.height);
+function resizeXV() {
+  cXV.width = cXV.offsetWidth;
+  cXV.height = cXV.offsetHeight;
+}
+resizeXV();
+window.addEventListener("resize", resizeXV);
 
-  pXV.forEach(p=>{
+// Crear partículas
+let pXV = [];
+for (let i = 0; i < 40; i++) {
+  pXV.push({
+    x: Math.random() * cXV.width,
+    y: Math.random() * cXV.height,
+    dx: (Math.random() - 0.5) * 1,    // velocidad horizontal
+    dy: (Math.random() - 0.5) * 1,    // velocidad vertical
+    r: Math.random() * 2 + 1,         // radio
+    a: Math.random()                    // opacidad
+  });
+}
+
+// Animación partículas
+function loopXV() {
+  xXV.clearRect(0, 0, cXV.width, cXV.height);
+
+  pXV.forEach((p, i) => {
     xXV.beginPath();
-    xXV.arc(p.x,p.y,p.r,0,Math.PI*2);
-    xXV.fillStyle=`rgba(192,192,192,${p.a})`;
+    xXV.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+
+    // Color dorado con brillo
+    xXV.fillStyle = `rgba(255,215,0,${p.a})`; // dorado
+    xXV.shadowBlur = 6;
+    xXV.shadowColor = "rgba(255,223,0,0.8)";
+
     xXV.fill();
 
+    // Movimiento
     p.x += p.dx;
     p.y += p.dy;
 
-    if(p.x < 0 || p.x > cXV.width) p.dx *= -1;
-    if(p.y < 0 || p.y > cXV.height) p.dy *= -1;
+    // Rebote al llegar al borde
+    if (p.x < 0 || p.x > cXV.width) p.dx *= -1;
+    if (p.y < 0 || p.y > cXV.height) p.dy *= -1;
   });
 
   requestAnimationFrame(loopXV);
 }
+
 loopXV();
 
 /* CONTADOR */
