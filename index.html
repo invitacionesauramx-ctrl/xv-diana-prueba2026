@@ -237,7 +237,7 @@ canvas{
   box-shadow:0 6px 18px rgba(255,0,170,0.7);
 }
 
-/* BOTONES UBICACIÓN DORADOS */
+/* BOTONES UBICACIÓN DORADOS INDEPENDIENTES */
 .btn-ubicacion{
   position:absolute;
   padding:10px 18px;
@@ -246,9 +246,10 @@ canvas{
   font-weight:600;
   border-radius:12px;
   text-decoration:none;
-  box-shadow: 0 4px 12px rgba(255,215,0,0.7); /* sombra dorada */
+  box-shadow: 0 4px 12px rgba(255,215,0,0.7);
   transition: transform .3s, box-shadow .3s, background .3s;
   font-size:14px;
+  left:50%; /* centrado horizontal */
 }
 
 /* Hover efecto brillante */
@@ -258,17 +259,15 @@ canvas{
   transform: scale(1.1);
 }
 
-/* Posición más arriba */
+/* Posiciones independientes */
 .btn-parroquia{
-  top: 100%;   /* ajustado más arriba */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%; /* ajusta este valor para subir/bajar parroquia */
+  transform: translateX(-50%); /* solo centrado horizontal */
 }
 
 .btn-salon{
-  top: 100%;   /* ajustado más arriba */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%; /* ajusta este valor para subir/bajar salón */
+  transform: translateX(-50%); /* solo centrado horizontal */
 }
 
 /* BLOQUE 9 */
