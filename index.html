@@ -237,16 +237,38 @@ canvas{
   box-shadow:0 6px 18px rgba(255,0,170,0.7);
 }
 
+/* BOTONES UBICACIÓN DORADOS */
+.btn-ubicacion{
+  position:absolute;
+  padding:10px 18px;
+  background: linear-gradient(145deg, #FFD700, #FFA500); /* gradiente dorado */
+  color:#fff;
+  font-weight:600;
+  border-radius:12px;
+  text-decoration:none;
+  box-shadow: 0 4px 12px rgba(255,215,0,0.7); /* sombra dorada */
+  transition: transform .3s, box-shadow .3s, background .3s;
+  font-size:14px;
+}
+
+/* Hover efecto brillante */
+.btn-ubicacion:hover{
+  background: linear-gradient(145deg, #FFF700, #FFB800);
+  box-shadow: 0 6px 18px rgba(255,223,0,0.9);
+  transform: scale(1.1);
+}
+
+/* Posición más arriba */
 .btn-parroquia{
-  top: 45%;       /* Baja el botón */
-  left: 50%;      /* Lo centra horizontalmente */
-  transform: translate(-50%, -55%); /* Ajusta el centro exacto */
+  top: 35%;   /* ajustado más arriba */
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .btn-salon{
-  top: 95%;       /* Ajusta para bajarlo o subirlo según se vea bien */
-  left: 50%;      /* Lo centra horizontalmente */
-  transform: translate(-50%, -60%); /* Centra el botón exacto */
+  top: 75%;   /* ajustado más arriba */
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* BLOQUE 9 */
