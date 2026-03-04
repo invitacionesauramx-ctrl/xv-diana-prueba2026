@@ -217,10 +217,10 @@ canvas{
 
 .bloque-ubicacion{
   position: relative;
-  height: 300px; /* ajusta la altura según tu imagen */
+  height: auto; /* se adapta a la imagen */
 }
 
-/* Estilo dorado de los botones */
+/* Botones centrados horizontalmente */
 .btn-ubicacion{
   position: absolute;
   left: 50%;
@@ -237,13 +237,13 @@ canvas{
   font-size: 14px;
 }
 
-/* Ajusta aquí la posición vertical de cada botón */
+/* Ajusta la posición vertical según proporción de la imagen */
 .btn-parroquia{
-  top: 35%;  /* sube o baja cambiando el % */
+  top: 35%;  /* puedes subir o bajar cambiando el % */
 }
 
 .btn-salon{
-  top: 60%;  /* sube o baja cambiando el % */
+  top: 60%;  /* puedes subir o bajar cambiando el % */
 }
 
 /* BLOQUE 9 */
@@ -366,7 +366,7 @@ canvas{
   <canvas id="particulasCountdown"></canvas>
 </div>
 
-<div class="bloque bloque-ubicacion" style="position:relative; height:300px;"> 
+<div class="bloque bloque-ubicacion"> 
   <img src="bloque7.webp" style="width:100%; display:block;">
 
   <!-- Botón Parroquia -->
@@ -379,7 +379,6 @@ canvas{
     Salón
   </a>
 </div>
-
 <div class="bloque bloque-reflejo">
   <img src="bloque8.webp">
 </div>
