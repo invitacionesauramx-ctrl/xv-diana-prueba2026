@@ -253,67 +253,62 @@ canvas{
   overflow:hidden;
 }
 
-/* BOTÓN 3D */
-.btn-datos{
-  position:absolute;
-  bottom:60%;
-  left:50%;
-  transform:translateX(-50%);
-  padding:14px 28px;
-  background:linear-gradient(145deg,#ff86cf,#ff3fa7);
-  color:#fff;
-  font-weight:700;
-  border-radius:16px;
-  cursor:pointer;
+/* BOTÓN 3D DORADO */
+.btn-datos {
+  position: absolute;
+  bottom: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  background: linear-gradient(145deg, #f7e27c, #d4af37); /* dorado metálico */
+  color: #2c1c00; /* texto oscuro tipo oro */
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
   box-shadow:
-    0 8px 0 #c21875,
-    0 12px 20px rgba(255,0,170,0.5);
-  transition:.2s;
-  display:flex;
-  align-items:center;
-  gap:8px;
+    0 8px 0 #b8860b,
+    0 12px 20px rgba(212,175,55,0.5);
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Efecto presionado */
-.btn-datos:active{
-  transform:translateX(-50%) translateY(6px);
+.btn-datos:active {
+  transform: translateX(-50%) translateY(6px);
   box-shadow:
-    0 2px 0 #c21875,
-    0 6px 12px rgba(255,0,170,0.4);
+    0 2px 0 #b8860b,
+    0 6px 12px rgba(212,175,55,0.4);
 }
 
 /* Flecha animada */
-.flecha{
-  font-size:14px;
-  animation:rebote 1.2s infinite;
+.flecha {
+  font-size: 14px;
+  animation: rebote 1.2s infinite;
 }
 
-@keyframes rebote{
-  0%,100%{ transform:translateY(0); }
-  50%{ transform:translateY(4px); }
-}
-
-/* PANEL ACORDEÓN */
-.panel-datos{
-  position:absolute;
-  bottom:5%;
-  left:50%;
-  transform:translateX(-50%);
-  width:85%;
-  background:rgba(255,255,255,0.95);
-  border-radius:18px;
-  padding:0 20px;
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .5s ease, padding .4s ease;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  text-align:left;
+/* PANEL ACORDEÓN AJUSTADO */
+.panel-datos {
+  position: absolute;
+  bottom: 45%; /* más cerca del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease, padding .4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: left;
 }
 
 /* Cuando está activo */
-.panel-datos.activo{
-  max-height:200px;
-  padding:20px;
+.panel-datos.activo {
+  max-height: 200px;
+  padding: 20px;
 }
 
 </style>
@@ -386,7 +381,7 @@ canvas{
 <div class="bloque bloque-acordeon">
   <img src="bloque9.webp">
 
-  <!-- Botón 3D -->
+  <!-- Botón 3D Dorado -->
   <div class="btn-datos" onclick="toggleDatos()">
     Toca aquí
     <span class="flecha">▼</span>
