@@ -20,6 +20,7 @@ body{
   background:#000;
   display:flex;
   justify-content:center;
+  perspective:1200px;
 }
 
 .contenedor{
@@ -56,18 +57,19 @@ body{
 /* EFECTO SCROLL */
 .bloque{
   opacity:0;
-  transform:translateY(60px) scale(.95) rotateX(10deg);
-  transition:all 1s cubic-bezier(.19,1,.22,1);
+  transform:translateY(120px) scale(.85) rotateX(25deg);
+  filter:blur(8px);
+  transition:
+  transform 1.4s cubic-bezier(.19,1,.22,1),
+  opacity 1.2s ease,
+  filter 1.2s ease;
+  transform-origin:center top;
+  will-change:transform,opacity,filter;
 }
-
-.bloque.visible{
-  opacity:1;
-  transform:translateY(0) scale(1);
-}
-
 .bloque.visible{
   opacity:1;
   transform:translateY(0) scale(1) rotateX(0deg);
+  filter:blur(0);
 }
 
 /* TEXTO BLOQUE 2 */
@@ -337,8 +339,9 @@ canvas{
   box-shadow:0 10px 20px rgba(212,175,55,0.9);
 }
 
-.bloque:hover{
-  transform:scale(1.02);
+.bloque.visible:hover{
+  transform:translateY(-6px) scale(1.04) rotateX(0deg);
+  transition:transform .4s ease;
 }
 
 </style>
