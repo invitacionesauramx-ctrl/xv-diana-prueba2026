@@ -354,9 +354,6 @@ canvas{
 </div>
 
 <div class="bloque bloque-particulas-xv">
-  
-
-<div class="bloque bloque-particulas-xv">
   <img src="bloque3.webp">
   <canvas id="particulasXV"></canvas>
 </div>
@@ -364,8 +361,6 @@ canvas{
 <div class="bloque bloque-reflejo">
   <img src="bloque4.webp">
 </div>
-
-<div class="bloque bloque-estrellas">
 
 <div class="bloque bloque-estrellas">
   <img src="bloque5.webp">
@@ -388,18 +383,16 @@ canvas{
   <canvas id="particulasCountdown"></canvas>
 </div>
 
-<div class="bloque bloque-ubicacion"> 
-  <img src="bloque7.webp" style="width:100%; display:block;">
+<div class="bloque bloque-ubicacion">
+  <img src="bloque7.webp">
 
-  <!-- Botón Parroquia -->
-  <a href="https://maps.app.goo.gl/6C8YXR3zc164KboX6" target="_blank" class="btn-ubicacion btn-parroquia">
-    Ver mapa
-  </a>
+  <div class="btn-wrapper">
+    <a href="#" class="btn-ubicacion btn-parroquia">Ver mapa</a>
+  </div>
 
-  <!-- Botón Salón -->
-  <a href="https://maps.app.goo.gl/sYFRkpUgoh5NBbeM9" target="_blank" class="btn-ubicacion btn-salon">
-    Ver mapa
-  </a>
+  <div class="btn-wrapper">
+    <a href="#" class="btn-ubicacion btn-salon">Ver mapa</a>
+  </div>
 </div>
 <div class="bloque bloque-reflejo">
   <img src="bloque8.webp">
@@ -588,10 +581,9 @@ const fechaEvento=new Date("2026-12-24T22:00:00").getTime();
 setInterval(()=>{
   const d=Math.max(0,fechaEvento-Date.now());
   document.getElementById("dias").innerText=Math.floor(d/86400000).toString().padStart(2,"0");
-  document.getElementById("horas").innerText=Math.floor(d/3600000)%24;
-  document.getElementById("minutos").innerText=Math.floor(d/60000)%60;
-  document.getElementById("segundos").innerText=Math.floor(d/1000)%60;
-},1000);
+  document.getElementById("horas").innerText=(Math.floor(d/3600000)%24).toString().padStart(2,"0");
+document.getElementById("minutos").innerText=(Math.floor(d/60000)%60).toString().padStart(2,"0");
+document.getElementById("segundos").innerText=(Math.floor(d/1000)%60).toString().padStart(2,"0");
 
 /* PARTICULAS ROSAS CONTADOR */
 const cC=document.getElementById("particulasCountdown");
