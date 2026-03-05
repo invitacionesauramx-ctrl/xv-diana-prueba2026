@@ -578,12 +578,16 @@ loopXV();
 
 /* CONTADOR */
 const fechaEvento=new Date("2026-12-24T22:00:00").getTime();
+
 setInterval(()=>{
   const d=Math.max(0,fechaEvento-Date.now());
+
   document.getElementById("dias").innerText=Math.floor(d/86400000).toString().padStart(2,"0");
   document.getElementById("horas").innerText=(Math.floor(d/3600000)%24).toString().padStart(2,"0");
-document.getElementById("minutos").innerText=(Math.floor(d/60000)%60).toString().padStart(2,"0");
-document.getElementById("segundos").innerText=(Math.floor(d/1000)%60).toString().padStart(2,"0");
+  document.getElementById("minutos").innerText=(Math.floor(d/60000)%60).toString().padStart(2,"0");
+  document.getElementById("segundos").innerText=(Math.floor(d/1000)%60).toString().padStart(2,"0");
+
+},1000);
 
 /* PARTICULAS ROSAS CONTADOR */
 const cC=document.getElementById("particulasCountdown");
