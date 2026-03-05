@@ -520,20 +520,27 @@ canvas{
   </div>
 </div>
 
-<div class="bloque">
-  <div style="padding:30px; background:#fff; text-align:center;">
-    <h2 style="margin-bottom:15px; color:#d4af37;">Envía tus fotos</h2>
+</div>
 
-    <!-- FORMULARIO DE FORMS.APP -->
-    <iframe allowtransparency="true" allowfullscreen="true" 
-      allow="geolocation; microphone; camera"
-      src="https://via35wzb.forms.app/form/69a92e60e14ca900029ced32"
-      frameborder="0"
-      style="width: 90%; max-width:430px; height:500px; border:none; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.3);">
-    </iframe>
+<!-- BLOQUE SUBIDA DE FOTOS -->
+<div class="bloque bloque-botones" style="text-align:center; padding:30px; background:#fff;">
+  <h2 style="margin-bottom:15px; color:#d4af37;">Sube tus fotos</h2>
+  
+  <p>Escanea el QR para subir tus fotos directamente.</p>
+
+  <div id="contenedorQRSubida" style="margin-top:15px;">
+    <img id="qrSubida" src="" alt="QR Subida Fotos" style="width:180px; height:180px;">
   </div>
 </div>
 
+<!-- BLOQUE DESCARGA PARA QUINCEAÑERA -->
+<div class="bloque bloque-botones" style="text-align:center; padding:30px; background:#fff;">
+  <h2 style="margin-bottom:15px; color:#d4af37;">Descarga tus fotos</h2>
+  
+  <p>Introduce la contraseña para acceder a la descarga:</p>
+
+  <input type="password" id="passFotos" placeholder="Contraseña" style="padding:10px; margin-bottom:10px;">
+  <button id="btnDescarga">Descargar fotos</button>
 </div>
 
 <audio id="musica" preload="auto" loop>
@@ -707,6 +714,27 @@ function toggleDatos(){
 }
 
 
+// QR para subir fotos a Dropbox
+const urlRequest = "https://www.dropbox.com/scl/fo/lx2ieq96b7l40mcm6id88/AFyt2tGbV0OTUNauFolNGP0?rlkey=4krboyxfuo8kdbr2bawyn2g5d&dl=0";
+const qrSubida = new QRious({
+  element: document.getElementById("qrSubida"),
+  value: urlRequest,
+  size: 180
+});
+
+
+const btnDescarga = document.getElementById("btnDescarga");
+btnDescarga.addEventListener("click", () => {
+  const input = document.getElementById("passFotos").value;
+  const passwordCorrecta = "Lupita2026"; // aquí pones la contraseña secreta
+  const linkDescarga = "https://www.dropbox.com/scl/fo/lx2ieq96b7l40mcm6id88/AFyt2tGbV0OTUNauFolNGP0?rlkey=4krboyxfuo8kdbr2bawyn2g5d&dl=0";
+
+  if(input === passwordCorrecta){
+    window.open(linkDescarga, "_blank");
+  } else {
+    alert("Contraseña incorrecta ❌");
+  }
+});
 
 </script>
 
