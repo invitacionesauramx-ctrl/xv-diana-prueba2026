@@ -641,22 +641,7 @@ function toggleDatos(){
   panel.classList.toggle("activo");
 }
 
-const contenedor = document.querySelector(".contenedor");
 
-document.addEventListener("mousemove", (e) => {
-
-  const x = (window.innerWidth / 2 - e.clientX) / 40;
-  const y = (window.innerHeight / 2 - e.clientY) / 40;
-
-  contenedor.style.transform =
-    "rotateY(" + x + "deg) rotateX(" + y + "deg)";
-
-});
-
-document.addEventListener("mouseleave", () => {
-  contenedor.style.transform =
-    "rotateY(0deg) rotateX(0deg)";
-});
 
 </script>
 
