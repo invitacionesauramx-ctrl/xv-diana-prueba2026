@@ -356,6 +356,31 @@ canvas{
   transition:transform .6s ease;
 }
 
+/* CONTENEDOR BLOQUE FECHA */
+.bloque-fecha{
+  position:relative;
+}
+
+/* TEXTO FECHA */
+.fecha-evento{
+  position:absolute;
+
+  top:75%;     /* mueve ARRIBA / ABAJO */
+  left:50%;    /* mueve IZQUIERDA / DERECHA */
+
+  transform:translate(-50%,-50%);
+
+  font-family:'Great Vibes',cursive;
+  font-size:38px;
+  color:#d4af37;
+
+  text-shadow:
+    0 2px 5px rgba(0,0,0,0.6),
+    0 0 10px rgba(212,175,55,0.7);
+
+  z-index:5;
+}
+
 </style>
 </head>
 
@@ -363,8 +388,13 @@ canvas{
 
 <div class="contenedor">
 
-<div class="bloque bloque-particulas">
+<div class="bloque bloque-particulas bloque-fecha">
   <img src="bloque1.webp">
+
+  <div class="fecha-evento">
+    17 diciembre 2026
+  </div>
+
   <canvas id="particulas"></canvas>
 </div>
 
