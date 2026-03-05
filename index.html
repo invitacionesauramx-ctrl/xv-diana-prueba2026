@@ -56,8 +56,8 @@ body{
 /* EFECTO SCROLL */
 .bloque{
   opacity:0;
-  transform:translateY(40px) scale(.98);
-  transition:.9s cubic-bezier(.19,1,.22,1);
+  transform:translateY(60px) scale(.95) rotateX(10deg);
+  transition:all 1s cubic-bezier(.19,1,.22,1);
 }
 
 .bloque.visible{
@@ -65,9 +65,9 @@ body{
   transform:translateY(0) scale(1);
 }
 
-.bloque:first-child{
-  opacity:1 !important;
-  transform:none !important;
+.bloque.visible{
+  opacity:1;
+  transform:translateY(0) scale(1) rotateX(0deg);
 }
 
 /* TEXTO BLOQUE 2 */
@@ -335,6 +335,10 @@ canvas{
 #btnCalendario:hover{
   transform:scale(1.05);
   box-shadow:0 10px 20px rgba(212,175,55,0.9);
+}
+
+.bloque:hover{
+  transform:scale(1.02);
 }
 
 </style>
