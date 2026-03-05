@@ -35,9 +35,9 @@ body{
 
 /* BOTÓN AUDIO */
 .audio-btn{
-  position:fixed;
-  bottom:25px;
-  right:20px;
+  position: absolute;  /* antes estaba fixed */
+  top: 15px;           /* margen desde arriba del bloque */
+  right: 15px;         /* margen desde la derecha del bloque */
   width:70px;
   height:70px;
   border-radius:50%;
@@ -51,8 +51,7 @@ body{
   font-size:30px;
   color:#fff;
   cursor:pointer;
-  z-index:99999;
-
+  z-index:10;       /* suficiente para que quede arriba de la imagen */
   animation:flotarAudio 3s ease-in-out infinite;
 }
 /* EFECTO SCROLL */
@@ -408,6 +407,9 @@ canvas{
   </div>
 
   <canvas id="particulas"></canvas>
+
+  <!-- Botón de música solo en este bloque -->
+  <div class="audio-btn" id="btnAudio">▶</div>
 </div>
 
 <div class="bloque bloque-btn">
