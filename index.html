@@ -51,9 +51,10 @@ body{
   font-size:30px;
   color:#fff;
   cursor:pointer;
-  z-index:99999; /* IMPORTANTE */
-}
+  z-index:99999;
 
+  animation:flotarAudio 3s ease-in-out infinite;
+}
 /* EFECTO SCROLL */
 .bloque{
   opacity:0;
@@ -178,6 +179,18 @@ canvas{
   0%{transform:translateY(0)}
   50%{transform:translateY(-6px)}
   100%{transform:translateY(0)}
+}
+
+@keyframes flotarAudio{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-6px);
+  }
+  100%{
+    transform:translateY(0);
+  }
 }
 
 /* BLOQUE 5 ESTRELLAS */
