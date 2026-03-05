@@ -344,6 +344,16 @@ canvas{
   transition:transform .4s ease;
 }
 
+.contenedor{
+  transform-style:preserve-3d;
+  transition:transform .2s ease-out;
+}
+
+.bloque{
+  transform-style:preserve-3d;
+  transition:transform .6s ease;
+}
+
 </style>
 </head>
 
@@ -630,6 +640,23 @@ function toggleDatos(){
   const panel = document.getElementById("panelDatos");
   panel.classList.toggle("activo");
 }
+
+const contenedor = document.querySelector(".contenedor");
+
+document.addEventListener("mousemove", (e) => {
+
+  const x = (window.innerWidth / 2 - e.clientX) / 40;
+  const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+  contenedor.style.transform =
+    "rotateY(" + x + "deg) rotateX(" + y + "deg)";
+
+});
+
+document.addEventListener("mouseleave", () => {
+  contenedor.style.transform =
+    "rotateY(0deg) rotateX(0deg)";
+});
 
 </script>
 
